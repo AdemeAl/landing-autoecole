@@ -13,11 +13,11 @@ export const Contact = () => {
             <div>
               <h1 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">Contactez-nous</h1>
               <p className="text-lg text-slate-500 leading-relaxed">
-                Laurent et Véronique sont à votre écoute. Passez nous voir à l'agence aux horaires d'ouverture ou laissez-nous un message.
+                Laurent et Véronique sont à votre écoute à Huningue. Passez nous voir à l'agence aux horaires d'ouverture ou laissez-nous un message.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <address className="space-y-6 not-italic">
               <div className="flex gap-6 items-start">
                 <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
                   <MapPin size={24} />
@@ -34,29 +34,29 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 text-lg">Téléphone</h3>
-                  <a href="tel:0648320601" className="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors"> 03 89 69 70 20</a>
+                  <a href="tel:0389697020" className="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors"> 03 89 69 70 20</a>
                 </div>
               </div>
+            </address>
 
-              <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
-                  <Clock size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Permanences & Code</h3>
-                  <div className="mt-2 space-y-2 text-slate-600">
-                    <div className="flex justify-between w-48 text-sm">
-                      <span>Mardi</span>
-                      <span className="font-medium">18h00 - 20h00</span>
-                    </div>
-                    <div className="flex justify-between w-48 text-sm">
-                      <span>Jeudi</span>
-                      <span className="font-medium">18h00 - 20h00</span>
-                    </div>
-                    <div className="flex justify-between w-48 text-sm">
-                      <span>Samedi</span>
-                      <span className="font-medium">10h00 - 12h00</span>
-                    </div>
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                <Clock size={24} />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 text-lg">Permanences & Code</h3>
+                <div className="mt-2 space-y-2 text-slate-600">
+                  <div className="flex justify-between w-48 text-sm">
+                    <span>Mardi</span>
+                    <span className="font-medium">18h00 - 20h00</span>
+                  </div>
+                  <div className="flex justify-between w-48 text-sm">
+                    <span>Jeudi</span>
+                    <span className="font-medium">18h00 - 20h00</span>
+                  </div>
+                  <div className="flex justify-between w-48 text-sm">
+                    <span>Samedi</span>
+                    <span className="font-medium">10h00 - 12h00</span>
                   </div>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export const Contact = () => {
           {/* Right Column: Form & Map */}
           <div className="lg:col-span-7 space-y-8">
             <div className="bg-white shadow-xl p-8 md:p-10 rounded-3xl border border-slate-100">
-              <h2 className="text-2xl font-bold text-slate-900 mb-8">Nous localiser</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-8">Nous localiser à Huningue</h2>
               <div className="rounded-xl overflow-hidden border border-slate-200 h-[400px]">
                  <div style={{ width: '100%', height: '100%' }}>
                     <iframe 
@@ -92,8 +92,9 @@ export const Contact = () => {
                         scrolling="no" 
                         marginHeight={0} 
                         marginWidth={0} 
-                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=13%20rue%20abbatucci+(Auto%20Ecole%20Laurent)&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                        title="Carte Contact"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=fr&amp;q=13%20rue%20abbatucci+(Auto%20Ecole%20Laurent)&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        title="Carte Contact Auto École Laurent"
+                        aria-label="Carte montrant la localisation de l'Auto École Laurent"
                     ></iframe>
                  </div>
               </div>

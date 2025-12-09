@@ -4,10 +4,10 @@ import { ViewState } from '../types';
 
 export const Landing = ({ onNavigate }) => {
   return (
-    <div className="bg-white font-sans text-slate-900">
+    <main className="bg-white font-sans text-slate-900">
       
       {/* --- HERO SECTION --- */}
-      <div className="relative overflow-hidden bg-slate-900 text-white pt-32 pb-20 lg:pt-48 lg:pb-32">
+      <header className="relative overflow-hidden bg-slate-900 text-white pt-32 pb-20 lg:pt-48 lg:pb-32">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         
@@ -16,7 +16,7 @@ export const Landing = ({ onNavigate }) => {
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-2 text-blue-400 font-bold uppercase tracking-wider text-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-              13 Rue Abbatucci • Huningue
+              13 Rue Abbatucci • Huningue (68330)
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight">
@@ -25,13 +25,14 @@ export const Landing = ({ onNavigate }) => {
             </h1>
             
             <p className="text-lg text-slate-400 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Votre réussite en toute sécurité. Formations Auto, Moto, AM et Code en ligne avec Prépacode.
+              Votre réussite en toute sécurité à Huningue. Formations Permis B, Conduite Accompagnée (AAC), Permis Moto, AM et Code en ligne.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
                 onClick={() => onNavigate(ViewState.PRICING)}
                 className="bg-blue-600 hover:bg-blue-500 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-2"
+                aria-label="Voir nos tarifs et formations"
               >
                 Nos Formations
                 <ChevronRight size={20} />
@@ -39,6 +40,7 @@ export const Landing = ({ onNavigate }) => {
               <button 
                 onClick={() => onNavigate(ViewState.CONTACT)}
                 className="bg-slate-800 hover:bg-slate-700 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all"
+                aria-label="Contacter l'auto-école"
               >
                 Nous contacter
               </button>
@@ -49,27 +51,29 @@ export const Landing = ({ onNavigate }) => {
             <div className="absolute -inset-4 bg-blue-600/20 rounded-2xl blur-xl"></div>
             <img 
               src="https://img.freepik.com/photos-gratuite/instructeur-conduite-femme-homme-pendant-examen-conduite_52683-101120.jpg?semt=ais_se_enriched&w=740&q=80" 
-              alt="Auto École Laurent Huningue" 
+              alt="Moniteur d'auto école à Huningue en leçon de conduite" 
               className="relative rounded-2xl shadow-2xl border border-slate-700 w-full object-cover h-[450px]"
+              width="740"
+              height="450"
             />
           </div>
         </div>
-      </div>
+      </header>
 
       {/* --- HISTOIRE & EQUIPE --- */}
-      <div className="py-20 max-w-7xl mx-auto px-6">
+      <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 text-blue-600 font-bold uppercase tracking-wider text-sm">
               <History size={18} /> Depuis 2003
             </div>
-            <h2 className="text-3xl font-bold text-slate-900">L'expérience au service de votre permis</h2>
+            <h2 className="text-3xl font-bold text-slate-900">L'expérience au service de votre permis à Huningue</h2>
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
                 C'est début 2003 que Laurent Sittler a repris l'auto-école après déjà trois années d'expérience en tant que moniteur auto et moto à Colmar, Mulhouse et Saint-Louis.
               </p>
               <p>
-                Depuis son installation au 13 rue Abbatucci en 2004, l'équipe propose des formations sérieuses et diversifiées. Laurent et Véronique vous accompagnent avec pédagogie pour votre réussite.
+                Depuis son installation au 13 rue Abbatucci en 2004, l'équipe propose des formations sérieuses et diversifiées. Laurent et Véronique vous accompagnent avec pédagogie pour votre réussite au permis de conduire.
               </p>
             </div>
             <div className="flex items-center gap-4 mt-4">
@@ -101,10 +105,10 @@ export const Landing = ({ onNavigate }) => {
              </ul>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* --- PREPACODE SECTION --- */}
-      <div className="bg-blue-600 py-16 text-white">
+      <section className="bg-blue-600 py-16 text-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-4">Le Code de la route chez vous</h2>
@@ -127,19 +131,24 @@ export const Landing = ({ onNavigate }) => {
             </a>
           </div>
           <div className="relative">
-             <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop" alt="Code en ligne" className="rounded-2xl shadow-2xl border-4 border-blue-500 opacity-90" />
+             <img 
+               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop" 
+               alt="Révision du code de la route sur tablette" 
+               className="rounded-2xl shadow-2xl border-4 border-blue-500 opacity-90"
+               loading="lazy"
+             />
           </div>
         </div>
-      </div>
+      </section>
 
       {/* --- INFO / LOCATION --- */}
-      <div className="bg-slate-50 py-24">
+      <section className="bg-slate-50 py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="inline-block p-2 bg-blue-100 text-blue-700 rounded-lg mb-4">
               <MapPin size={24} />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Notre Agence</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Notre Agence à Huningue</h2>
             <p className="text-slate-600 text-lg mb-8 leading-relaxed">
               Retrouvez-nous au 13 Rue Abbatucci à Huningue pour vos séances de code ou vos renseignements administratifs.
             </p>
@@ -176,13 +185,14 @@ export const Landing = ({ onNavigate }) => {
                     scrolling="no" 
                     marginHeight={0} 
                     marginWidth={0} 
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=13%20rue%20abbatucci+(Auto%20Ecole%20Laurent)&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                    title="Carte Auto Ecole Laurent"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=fr&amp;q=13%20rue%20abbatucci+(Auto%20Ecole%20Laurent%20Huningue)&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    title="Carte Auto Ecole Laurent Huningue"
+                    aria-label="Localisation Auto École Laurent sur Google Maps"
                 ></iframe>
              </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
