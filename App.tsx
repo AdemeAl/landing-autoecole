@@ -6,7 +6,15 @@ import { FAQ } from './components/FAQ';
 import { ViewState } from './types';
 import { Menu, X, Home, Euro, Phone, HelpCircle, User } from 'lucide-react';
 
-const PublicLayout = ({ children, currentView, onNavigate, isMenuOpen, setIsMenuOpen }) => (
+interface PublicLayoutProps {
+  children: React.ReactNode;
+  currentView: string;
+  onNavigate: (view: string) => void;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (isOpen: boolean) => void;
+}
+
+const PublicLayout = ({ children, currentView, onNavigate, isMenuOpen, setIsMenuOpen }: PublicLayoutProps) => (
   <div className="min-h-screen bg-slate-50 font-sans flex flex-col">
     <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all">
       <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
@@ -134,7 +142,7 @@ const App = () => {
   const [currentView, setCurrentView] = useState(ViewState.HOME);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigateTo = (view) => {
+  const navigateTo = (view: string) => {
     setCurrentView(view);
     setIsMenuOpen(false);
     window.scrollTo(0, 0);
