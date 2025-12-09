@@ -50,7 +50,7 @@ export const Landing = ({ onNavigate }) => {
           <div className="relative hidden lg:block">
             <div className="absolute -inset-4 bg-blue-600/20 rounded-2xl blur-xl"></div>
             <img 
-              src="https://img.freepik.com/photos-gratuite/instructeur-conduite-femme-homme-pendant-examen-conduite_52683-101120.jpg?semt=ais_se_enriched&w=740&q=80" 
+              src="https://www.permis2-2.fr/wp-content/uploads/2023/09/auto-ecole.jpeg" 
               alt="Moniteur d'auto école à Huningue en leçon de conduite" 
               className="relative rounded-2xl shadow-2xl border border-slate-700 w-full object-cover h-[450px]"
               width="740"
@@ -156,10 +156,6 @@ export const Landing = ({ onNavigate }) => {
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                <h3 className="font-bold text-slate-900 mb-4">Horaires de bureau & Séances de code</h3>
                <ul className="space-y-3 text-slate-600">
-                 <li className="flex justify-between border-b border-slate-100 pb-2">
-                   <span>Mardi</span>
-                   <span className="font-bold text-slate-900">18h00 - 20h00</span>
-                 </li>
                  <li className="flex justify-between border-b border-slate-100 pb-2">
                    <span>Jeudi</span>
                    <span className="font-bold text-slate-900">18h00 - 20h00</span>

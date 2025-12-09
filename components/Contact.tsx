@@ -47,10 +47,6 @@ export const Contact = () => {
                 <h3 className="font-bold text-slate-900 text-lg">Permanences & Code</h3>
                 <div className="mt-2 space-y-2 text-slate-600">
                   <div className="flex justify-between w-48 text-sm">
-                    <span>Mardi</span>
-                    <span className="font-medium">18h00 - 20h00</span>
-                  </div>
-                  <div className="flex justify-between w-48 text-sm">
                     <span>Jeudi</span>
                     <span className="font-medium">18h00 - 20h00</span>
                   </div>
