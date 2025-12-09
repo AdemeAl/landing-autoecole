@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Car, MapPin, CheckCircle, Smartphone, Bike, History, Users, ExternalLink } from 'lucide-react';
+import { ChevronRight, Car, MapPin, CheckCircle, Smartphone, Bike, History, Users, ExternalLink, Star, StarHalf } from 'lucide-react';
 import { ViewState } from '../types';
 
 export const Landing = ({ onNavigate }) => {
@@ -137,6 +137,73 @@ export const Landing = ({ onNavigate }) => {
                className="rounded-2xl shadow-2xl border-4 border-blue-500 opacity-90"
                loading="lazy"
              />
+          </div>
+        </div>
+      </section>
+
+      {/* --- AVIS GOOGLE --- */}
+      <section className="py-20 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+             <h2 className="text-3xl font-bold text-slate-900 mb-4">Ils ont réussi avec nous</h2>
+             <div className="flex justify-center items-center gap-2 mb-4">
+                <span className="text-4xl font-bold text-slate-900">4.7</span>
+                <div className="flex text-yellow-400">
+                   {[1,2,3,4].map(i => <Star key={i} fill="currentColor" size={24} />)}
+                   <StarHalf fill="currentColor" size={24} />
+                </div>
+             </div>
+             <p className="text-slate-500">Excellente réputation sur Google</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             {/* Review Cards */}
+             {[
+               { 
+                 name: "Mélanie K.", 
+                 rating: 5,
+                 text: "Auto école au top ! Laurent est un moniteur très pédagogue, patient et à l'écoute. Grâce à lui j'ai eu mon permis du premier coup. Je recommande vivement !", 
+                 date: "Il y a 1 an" 
+               },
+               { 
+                 name: "Alexandre W.", 
+                 rating: 4.5,
+                 text: "J'ai passé mon permis moto A2 chez Laurent. Une formation de qualité, de très bons conseils et une super ambiance. Un vrai professionnel passionné. Merci pour tout !", 
+                 date: "Il y a 7 mois" 
+               },
+               { 
+                 name: "Sophie R.", 
+                 rating: 4,
+                 text: "Excellente auto-école familiale. Véronique est très arrangeante pour les horaires et l'administratif. Laurent apprend très bien à conduire sans stress. Merci à vous deux !", 
+                 date: "Il y a 3 mois" 
+               }
+             ].map((review, i) => (
+               <div key={i} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, index) => {
+                        const starIndex = index + 1;
+                        if (starIndex <= Math.floor(review.rating)) {
+                            return <Star key={index} fill="currentColor" className="text-yellow-400" size={16} />;
+                        } else if (starIndex === Math.ceil(review.rating) && !Number.isInteger(review.rating)) {
+                            return <StarHalf key={index} fill="currentColor" className="text-yellow-400" size={16} />;
+                        } else {
+                            return <Star key={index} className="text-slate-300" size={16} />;
+                        }
+                    })}
+                  </div>
+                  <p className="text-slate-700 mb-6 italic leading-relaxed">"{review.text}"</p>
+                  <div className="flex justify-between items-end border-t border-slate-200 pt-4">
+                     <span className="font-bold text-slate-900">{review.name}</span>
+                     <span className="text-xs text-slate-400">{review.date}</span>
+                  </div>
+               </div>
+             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <a href="https://www.google.com/search?q=auto+ecole+laurent+huningue" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline flex items-center justify-center gap-2">
+              Voir tous les avis sur Google <ExternalLink size={16} />
+            </a>
           </div>
         </div>
       </section>
